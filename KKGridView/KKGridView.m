@@ -649,9 +649,9 @@ struct KKSectionMetrics {
     NSArray *visiblePaths = [self visibleIndexPaths];
     NSUInteger index = 0;
     
-    void (^updateCellFrame)(id,id) = ^(KKGridViewCell *cell, KKIndexPath *indexPath) {
-        cell.frame = [self rectForCellAtIndexPath:indexPath]; 
-    };
+//    void (^updateCellFrame)(id,id) = ^(KKGridViewCell *cell, KKIndexPath *indexPath) {
+//        cell.frame = [self rectForCellAtIndexPath:indexPath]; 
+// /   };
     
     for (KKIndexPath *indexPath in visiblePaths) {
         // Updates
@@ -971,7 +971,7 @@ struct KKSectionMetrics {
         NSLog(@"%@", keyPath);
         KKIndexPath *originalIndexPath = [keyPath copy];
         
-        NSUInteger amountForPath = amount;
+//        NSUInteger amountForPath = amount;
         
         if (keyPath.section == fromPath.section) {
             NSComparisonResult pathComparison = [fromPath compare:keyPath];
@@ -989,10 +989,10 @@ struct KKSectionMetrics {
                 }];
             }
             if (!indexPathIsLessOrEqual || !lastPathIsGreatorOrEqual) {
-                amountForPath = 0;
+//                amountForPath = 0;
             }
         } else if (keyPath.section > toPath.section) {
-            amountForPath = 0;
+//            amountForPath = 0;
         }
         
         keyPath.index+= amount;
